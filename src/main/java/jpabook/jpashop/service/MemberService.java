@@ -32,10 +32,12 @@ public class MemberService {
     }
 
     // 회원 전체 조회
+    @Transactional(readOnly = true)
     public List<Member> findMembers() {
         return memberRepository.findAll();
     }
-    
+
+    @Transactional(readOnly = true)
     public Member findOne(Long memberId) {
         return memberRepository.findOne(memberId);
     }
