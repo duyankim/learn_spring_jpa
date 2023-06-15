@@ -1,10 +1,10 @@
 package jpabook.jpashop.service;
 
-import jakarta.transaction.Transactional;
 import jpabook.jpashop.domain.Member;
 import jpabook.jpashop.repository.MemberRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
 
@@ -35,7 +35,7 @@ public class MemberService {
     public List<Member> findMembers() {
         return memberRepository.findAll();
     }
-
+    
     public Member findOne(Long memberId) {
         return memberRepository.findOne(memberId);
     }
